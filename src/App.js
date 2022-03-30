@@ -8,9 +8,12 @@ function App() {
   return (
     <div className="App">
       <Button
-        text={"Button"}
+        text={"My Button tyhjtyh"}
+        disabled={false}
         color={"primary"}
+        variant={"contained"}
       />
+      <Top/>
     </div>
    
   );
