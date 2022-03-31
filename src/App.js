@@ -1,5 +1,5 @@
-import Button from './component/Button'
-import Top from './component/Button'
+import HomeLayout from './screen/HomeLayout'
+import Top from './component/Top'
 import './App.css';
 import "./index.css";
 
@@ -7,13 +7,8 @@ import "./index.css";
 function App() {
   return (
     <div className="App">
-      <Button
-        text={"My Button tyhjtyh"}
-        disabled={false}
-        color={"primary"}
-        variant={"contained"}
-      />
       <Top/>
+      <HomeLayout/>
     </div>
    
   );
