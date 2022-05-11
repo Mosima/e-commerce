@@ -1,10 +1,16 @@
-import Button from './component/Button'
-import Top from './component/Button'
+import React, { useState, useEffect } from 'react';
+import Button from './components/Button'
+import Top from './components/Button'
+import {connect} from 'react-redux';
+
 import './App.css';
 import "./index.css";
 
 
-function App() {
+
+function App(props) {
+
+
   return (
     <div className="App">
       <Button
@@ -12,6 +18,7 @@ function App() {
         disabled={false}
         color={"primary"}
         variant={"contained"}
+        // onClick={(e)=>onClick(e, actions)}
       />
       <Top/>
     </div>
@@ -19,4 +26,9 @@ function App() {
   );
 }
 
-export default App;
+function matchStateToProps(state){
+  return {
+    product: state.product
+  }
+}
+export default connect(matchStateToProps)(App);
