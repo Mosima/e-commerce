@@ -1,10 +1,18 @@
+
+import React, { useState, useEffect } from 'react';
+import {connect} from 'react-redux';
+
 import HomeLayout from './screen/HomeLayout'
-import Top from './component/Top'
+import Top from './components/Top'
+
 import './App.css';
 import "./index.css";
 
 
-function App() {
+
+function App(props) {
+
+
   return (
     <div className="App">
       <Top/>
@@ -14,4 +22,9 @@ function App() {
   );
 }
 
-export default App;
+function matchStateToProps(state){
+  return {
+    product: state.product
+  }
+}
+export default connect(matchStateToProps)(App);

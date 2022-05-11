@@ -1,11 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux'
+import {createStore, applyMiddleware} from 'redux';
+import { configureStore } from '@reduxjs/toolkit'
+import reduxThunk from 'redux-thunk'
+import logger from 'redux-logger'
 
 import './index.css';
 import App from './App';
-import store from './store'
 import reportWebVitals from './reportWebVitals';
+import {store} from './store'
 
 ReactDOM.render(
   <React.StrictMode>
