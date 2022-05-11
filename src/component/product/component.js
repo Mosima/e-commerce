@@ -4,11 +4,19 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
 import * as actions from './action'
+import Card from '../../components/Card'
 
-function User(props) {
+function Product(props) {
+    const {product} = props.state.product
+    useEffect(() => {
+        props.actions.setProduct()
+      }, []);
+      console.log(props.state);
     return (
         <div className="user">
-            <br />
+            {
+                product? product.map((product, index)=><Card key={index} data={product} />):'loading'
+            }
         </div>
     );
 }
@@ -29,4 +37,4 @@ const mapDispatchToprops = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToprops)(User);
+export default connect(mapStateToProps, mapDispatchToprops)(Product);
